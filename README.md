@@ -1,5 +1,7 @@
 # svg_h.aux2
 
+<img src="images/svg_h_thumbnail.png" width="360">
+
 [English](README.en.md) | 日本語
 
 [sevenc-nanashi/svg.aux2](https://github.com/sevenc-nanashi/svg.aux2)（作者: Nanashi、MIT License）のフォーク。ストローク（線幅・線種・端・角など）拡張を加えた SVG レンダラーです。
