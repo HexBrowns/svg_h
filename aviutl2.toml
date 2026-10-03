@@ -2,22 +2,22 @@
 
 # 設定ファイルについては https://github.com/sevenc-nanashi/aviutl2-cli を参照してください。
 [project]
-id = "sevenc-nanashi.svg-aux2"
-name = "svg.aux2"
-version = "0.1.0"
+id = "svg-h-aux2"
+name = "svg_h.aux2"
+version = "0.8.0"
 
-[artifacts."svg.aux2"]
+[artifacts."svg_h.aux2"]
 enabled = true
-destination = "Plugin/svg.aux2"
+destination = "Plugin/svg_h/svg_h.aux2"
 
-[artifacts."svg.aux2".profiles.debug]
+[artifacts."svg_h.aux2".profiles.debug]
 build = "cargo build"
-source = "target/debug/svg_aux2.dll"
+source = "target/debug/svg_h.dll"
 enabled = true
 
-[artifacts."svg.aux2".profiles.release]
+[artifacts."svg_h.aux2".profiles.release]
 build = ["cargo build --release"]
-source = "target/release/svg_aux2.dll"
+source = "target/release/svg_h.dll"
 enabled = true
 
 [artifacts."English.aul2"]
@@ -26,9 +26,14 @@ source = "https://raw.githubusercontent.com/aviutl2/aviutl2_community_translatio
 destination = "Language/English.aul2"
 profiles = { debug = { enabled = true } }
 
-[artifacts."English.svg.aul2"]
-source = "./i18n/English.svg.aul2"
-destination = "Language/English.svg.aul2"
+[artifacts."English.svg_h.aul2"]
+source = "./i18n/English.svg_h.aul2"
+destination = "Language/English.svg_h.aul2"
+
+# GCMZDrops ハンドラー（.svg / .svgz → SVG_H）。GCMZDrops 自身が読む
+[artifacts."svg_h2obj.lua"]
+source = "./assets/GCMZScript/svg_h2obj.lua"
+destination = "Plugin/GCMZDrops/GCMZScript/svg_h2obj.lua"
 
 [development]
 aviutl2_version = "latest"
@@ -36,6 +41,6 @@ aviutl2_version = "latest"
 [release]
 prebuild = ["cargo about generate ./about.hbs -o ./release/package.txt"]
 package_template = "./release/package.txt"
-package_information = "{name} v{version} / SVGファイルを読み込むプラグイン"
+package_information = "{name} v{version} / SVGファイルを読み込むプラグイン（ストローク拡張フォーク）"
 
 [preview]

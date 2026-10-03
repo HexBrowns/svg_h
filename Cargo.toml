@@ -1,9 +1,14 @@
 [package]
-name = "svg-aux2"
-version = "0.5.1"
+name = "svg-h-aux2"
+version = "0.8.0"
 edition = "2024"
+authors = ["HexBrowns"]
+description = "svg_h.aux2 - SVG renderer for AviUtl2 with stroke extensions (fork of svg.aux2)"
+license = "MIT"
+publish = false
 
 [lib]
+name = "svg_h"
 crate-type = ["cdylib"]
 
 [dependencies]
@@ -11,3 +16,9 @@ aviutl2 = "0.29.0"
 dashmap = "6.2.1"
 educe = "0.6.0"
 resvg = "0.47.0"
+# usvg 0.47 が使っている版に合わせる（新しいクレートを増やさない）
+kurbo = "0.13"
+roxmltree = "0.21"
+
+[dev-dependencies]
+flate2 = "1"

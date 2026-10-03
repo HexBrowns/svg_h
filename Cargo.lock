@@ -829,13 +829,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "svg-aux2"
-version = "0.5.1"
+name = "svg-h-aux2"
+version = "0.8.0"
 dependencies = [
  "aviutl2",
  "dashmap",
  "educe",
+ "flate2",
+ "kurbo",
  "resvg",
+ "roxmltree 0.21.1",
 ]
 
 [[package]]
